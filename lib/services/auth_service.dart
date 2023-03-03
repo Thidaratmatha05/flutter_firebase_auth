@@ -28,12 +28,12 @@ class AuthService {
     try {
       UserCredential user = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-      if (user.user != null) return "Login Success";
+      if (user.user != null) return "! Login Success !";
     } on FirebaseAuthException catch (e) {
       print(e.code.toString());
       return e.message;
     }
-    return "Can't Login";
+    return "! Can not Login !";
   }
 
   Future<void> logout(User? currentUser) async {

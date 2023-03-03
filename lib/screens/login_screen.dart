@@ -13,7 +13,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Login to app"),
+        title: const Text("Login App"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(28.0),
@@ -41,11 +41,11 @@ class LoginScreen extends StatelessWidget {
                   final message = await AuthService().login(
                       email: _emailController.text,
                       password: _passwordController.text);
-                  if (message!.contains("Success")) {
+                  if (message!.contains("! Success !")) {
                     // ignore: use_build_context_synchronously
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) => const MyHomePage(
-                              title: 'Flutter Home Page',
+                              title: ' ! Home Page ! ',
                             )));
                   }
                 },
